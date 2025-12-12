@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "release_date": "2025-12-12",
-  "changelog": "Initial release of QPanel Assets - Custom UI panels for Quick Panels",
+  "version": "1.0.1",
+  "release_date": "2025-12-13",
+  "changelog": "Added example custom panels: Modeling Tools and Quick Materials",
   "min_qpanel_version": "2.0.0",
   "blender_min_version": "3.4.0"
 }
