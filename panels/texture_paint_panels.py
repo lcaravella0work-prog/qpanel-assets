@@ -14,6 +14,7 @@ class QPANEL_ASSET_PT_active_tool(Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'QPanel'
+    bl_qpanel_category = 'TEXTUREPAINT'  # QPanel Assets category
     
     @classmethod
     def poll(cls, context):
@@ -37,6 +38,7 @@ class QPANEL_ASSET_PT_texture_slots(Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'QPanel'
+    bl_qpanel_category = 'TEXTUREPAINT'  # QPanel Assets category
     
     @classmethod
     def poll(cls, context):
@@ -59,6 +61,7 @@ class QPANEL_ASSET_PT_brushes(Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'QPanel'
+    bl_qpanel_category = 'TEXTUREPAINT'  # QPanel Assets category
     
     @classmethod
     def poll(cls, context):
@@ -80,6 +83,7 @@ class QPANEL_ASSET_PT_brush_settings(Panel):
     bl_region_type = 'UI'
     bl_category = 'QPanel'
     bl_options = {'DEFAULT_CLOSED'}
+    bl_qpanel_category = 'TEXTUREPAINT'  # QPanel Assets category
     
     @classmethod
     def poll(cls, context):
@@ -125,6 +129,7 @@ class QPANEL_ASSET_PT_masking(Panel):
     bl_region_type = 'UI'
     bl_category = 'QPanel'
     bl_options = {'DEFAULT_CLOSED'}
+    bl_qpanel_category = 'TEXTUREPAINT'  # QPanel Assets category
     
     @classmethod
     def poll(cls, context):
@@ -152,6 +157,7 @@ class QPANEL_ASSET_PT_symmetry(Panel):
     bl_region_type = 'UI'
     bl_category = 'QPanel'
     bl_options = {'DEFAULT_CLOSED'}
+    bl_qpanel_category = 'TEXTUREPAINT'  # QPanel Assets category
     
     @classmethod
     def poll(cls, context):
@@ -179,6 +185,7 @@ class QPANEL_ASSET_PT_options(Panel):
     bl_region_type = 'UI'
     bl_category = 'QPanel'
     bl_options = {'DEFAULT_CLOSED'}
+    bl_qpanel_category = 'TEXTUREPAINT'  # QPanel Assets category
     
     @classmethod
     def poll(cls, context):
@@ -208,8 +215,7 @@ class QPANEL_ASSET_PT_workspace(Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'QPanel'
-    bl_options = {'DEFAULT_CLOSED'}
-    
+    bl_options = {'DEFAULT_CLOSED'}    bl_qpanel_category = 'TEXTUREPAINT'  # QPanel Assets category    
     @classmethod
     def poll(cls, context):
         return context.mode == 'PAINT_TEXTURE'

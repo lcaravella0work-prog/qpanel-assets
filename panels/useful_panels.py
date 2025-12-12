@@ -13,6 +13,7 @@ class QPANEL_ASSET_PT_quick_primitives(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'QPanel'
+    bl_qpanel_category = 'GENERAL'  # QPanel Assets category
     
     def draw(self, context):
         layout = self.layout
@@ -48,6 +49,7 @@ class QPANEL_ASSET_PT_quick_modifiers(bpy.types.Panel):
     """Quick add common modifiers"""
     bl_label = "Quick Modifiers"
     bl_idname = "QPANEL_ASSET_PT_quick_modifiers"
+    bl_qpanel_category = 'GENERAL'  # QPanel Assets category
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'QPanel'
@@ -88,6 +90,7 @@ class QPANEL_ASSET_PT_mesh_tools(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'QPanel'
+    bl_qpanel_category = 'GENERAL'  # QPanel Assets category
     
     def draw(self, context):
         layout = self.layout
@@ -131,6 +134,7 @@ class QPANEL_ASSET_PT_quick_shading(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'QPanel'
+    bl_qpanel_category = 'GENERAL'  # QPanel Assets category
     
     def draw(self, context):
         layout = self.layout
@@ -165,8 +169,7 @@ class QPANEL_ASSET_PT_transform_tools(bpy.types.Panel):
     bl_idname = "QPANEL_ASSET_PT_transform_tools"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = 'QPanel'
-    
+    bl_category = 'QPanel'    bl_qpanel_category = 'GENERAL'  # QPanel Assets category    
     def draw(self, context):
         layout = self.layout
         obj = context.active_object
