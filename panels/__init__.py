@@ -4,13 +4,14 @@ This module automatically registers all custom panels when assets are loaded
 """
 
 import bpy
-from . import example_panels, useful_panels
+from . import example_panels, useful_panels, texture_paint_panels
 
 
 # List of all panel modules
 modules = [
     example_panels,
     useful_panels,
+    texture_paint_panels,
 ]
 
 
