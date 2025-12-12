@@ -1,7 +1,7 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "release_date": "2025-12-13",
-  "changelog": "Added example custom panels: Modeling Tools and Quick Materials",
+  "changelog": "Fixed auto-registration: Added panels/__init__.py for proper panel loading",
   "min_qpanel_version": "2.0.0",
   "blender_min_version": "3.4.0"
 }
