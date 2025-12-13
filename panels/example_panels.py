@@ -45,7 +45,9 @@ class QPANEL_ASSET_PT_example_materials(bpy.types.Panel):
     bl_idname = "QPANEL_ASSET_PT_example_materials"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = 'QPanel'    bl_qpanel_category = 'EXAMPLES'  # QPanel Assets category    
+    bl_category = 'QPanel'
+    bl_qpanel_category = 'EXAMPLES'  # QPanel Assets category
+    
     def draw(self, context):
         layout = self.layout
         

@@ -1,7 +1,7 @@
 {
-  "version": "1.0.6",
+  "version": "1.0.7",
   "release_date": "2025-12-13",
-  "changelog": "UI organization: Categories now display as hierarchical sections in panel list instead of separate filters",
+  "changelog": "Fixed syntax error in example_panels.py",
   "min_qpanel_version": "2.0.0",
   "blender_min_version": "3.4.0"
 }
