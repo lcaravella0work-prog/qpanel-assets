@@ -169,7 +169,9 @@ class QPANEL_ASSET_PT_transform_tools(bpy.types.Panel):
     bl_idname = "QPANEL_ASSET_PT_transform_tools"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = 'QPanel'    bl_qpanel_category = 'GENERAL'  # QPanel Assets category    
+    bl_category = 'QPanel'
+    bl_qpanel_category = 'GENERAL'  # QPanel Assets category
+    
     def draw(self, context):
         layout = self.layout
         obj = context.active_object
