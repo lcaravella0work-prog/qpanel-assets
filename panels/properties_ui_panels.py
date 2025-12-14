@@ -21,35 +21,66 @@ class QPANEL_ASSET_PT_modifier_properties(bpy.types.Panel):
     
     def draw(self, context):
         layout = self.layout
+        obj = context.active_object
         
-        # Info box
+        # Header
         box = layout.box()
-        box.label(text="Modifier Properties", icon='MODIFIER')
+        row = box.row()
+        row.label(text="Modifiers", icon='MODIFIER')
+        row.operator("object.modifier_add", text="", icon='ADD')
         
-        # Try to switch to modifier context and draw the UI
-        try:
-            # Save current context
-            original_context = context.space_data.context
-            
-            # Switch to MODIFIER context
-            context.space_data.context = 'MODIFIER'
-            
-            # Get the modifier properties panel class
-            modifier_panel = getattr(bpy.types, 'DATA_PT_modifiers', None)
-            
-            if modifier_panel and hasattr(modifier_panel, 'draw'):
-                # Draw the modifier panel UI
-                modifier_panel.draw(modifier_panel, context)
-            else:
-                layout.label(text="Switch to Properties > Modifiers", icon='INFO')
-                layout.operator("screen.userpref_show", text="Open Properties").section = 'INTERFACE'
-            
-            # Restore original context
-            context.space_data.context = original_context
-            
-        except Exception as e:
-            layout.label(text="Unable to display modifier UI", icon='ERROR')
-            layout.label(text=str(e))
+        # Display all modifiers
+        if obj.modifiers:
+            for mod in obj.modifiers:
+                box = layout.box()
+                
+                # Modifier header
+                row = box.row()
+                row.prop(mod, "show_expanded", text="", emboss=False)
+                row.label(text=mod.name, icon=self.get_modifier_icon(mod.type))
+                
+                # Modifier controls
+                sub = row.row(align=True)
+                sub.prop(mod, "show_viewport", text="", icon='RESTRICT_VIEW_OFF' if mod.show_viewport else 'RESTRICT_VIEW_ON')
+                sub.prop(mod, "show_render", text="", icon='RESTRICT_RENDER_OFF' if mod.show_render else 'RESTRICT_RENDER_ON')
+                
+                # Move up/down and delete
+                sub = row.row(align=True)
+                op = sub.operator("object.modifier_move_up", text="", icon='TRIA_UP')
+                op.modifier = mod.name
+                op = sub.operator("object.modifier_move_down", text="", icon='TRIA_DOWN')
+                op.modifier = mod.name
+                op = sub.operator("object.modifier_remove", text="", icon='X')
+                op.modifier = mod.name
+                
+                # Modifier settings (if expanded)
+                if mod.show_expanded:
+                    self.draw_modifier_settings(box, obj, mod)
+        else:
+            layout.label(text="No modifiers", icon='INFO')
+    
+    def get_modifier_icon(self, mod_type):
+        """Get icon for modifier type"""
+        icons = {
+            'ARRAY': 'MOD_ARRAY',
+            'BEVEL': 'MOD_BEVEL',
+            'BOOLEAN': 'MOD_BOOLEAN',
+            'MIRROR': 'MOD_MIRROR',
+            'SOLIDIFY': 'MOD_SOLIDIFY',
+            'SUBSURF': 'MOD_SUBSURF',
+            'SUBDIVISION': 'MOD_SUBSURF',
+        }
+        return icons.get(mod_type, 'MODIFIER')
+    
+    def draw_modifier_settings(self, layout, obj, mod):
+        """Draw basic modifier settings"""
+        # Use template_modifier if available (Blender's built-in UI)
+        if hasattr(layout, 'template_modifier'):
+            layout.template_modifier(mod)
+        else:
+            # Fallback: draw some basic properties
+            layout.label(text=f"Type: {mod.type}")
+            layout.prop(mod, "name")
 
 
 class QPANEL_ASSET_PT_material_properties(bpy.types.Panel):
@@ -67,34 +98,34 @@ class QPANEL_ASSET_PT_material_properties(bpy.types.Panel):
     
     def draw(self, context):
         layout = self.layout
+        obj = context.active_object
         
-        # Info box
+        # Header
         box = layout.box()
-        box.label(text="Material Properties", icon='MATERIAL')
+        row = box.row()
+        row.label(text="Materials", icon='MATERIAL')
         
-        # Try to switch to material context and draw the UI
-        try:
-            # Save current context
-            original_context = context.space_data.context
-            
-            # Switch to MATERIAL context
-            context.space_data.context = 'MATERIAL'
-            
-            # Get the material properties panel class
-            material_panel = getattr(bpy.types, 'MATERIAL_PT_preview', None)
-            
-            if material_panel and hasattr(material_panel, 'draw'):
-                # Draw the material panel UI
-                material_panel.draw(material_panel, context)
-            else:
-                layout.label(text="Switch to Properties > Materials", icon='INFO')
-            
-            # Restore original context
-            context.space_data.context = original_context
-            
-        except Exception as e:
-            layout.label(text="Unable to display material UI", icon='ERROR')
-            layout.label(text=str(e))
+        # Material slots
+        if obj.material_slots:
+            for i, slot in enumerate(obj.material_slots):
+                box = layout.box()
+                row = box.row()
+                
+                if slot.material:
+                    row.prop(slot.material, "name", text="", icon='MATERIAL')
+                    
+                    # Material settings
+                    col = box.column()
+                    col.prop(slot.material, "use_nodes")
+                    if not slot.material.use_nodes:
+                        col.prop(slot.material, "diffuse_color", text="Base Color")
+                        col.prop(slot.material, "metallic")
+                        col.prop(slot.material, "roughness")
+                else:
+                    row.label(text=f"Slot {i+1}: Empty", icon='BLANK1')
+        else:
+            layout.label(text="No material slots", icon='INFO')
+            layout.operator("object.material_slot_add", icon='ADD')
 
 
 class QPANEL_ASSET_PT_render_properties(bpy.types.Panel):
@@ -108,34 +139,38 @@ class QPANEL_ASSET_PT_render_properties(bpy.types.Panel):
     
     def draw(self, context):
         layout = self.layout
+        scene = context.scene
+        rd = scene.render
         
-        # Info box
+        # Header
         box = layout.box()
-        box.label(text="Render Properties", icon='RENDER_STILL')
+        box.label(text="Render Settings", icon='RENDER_STILL')
         
-        # Try to switch to render context and draw the UI
-        try:
-            # Save current context
-            original_context = context.space_data.context
-            
-            # Switch to RENDER context
-            context.space_data.context = 'RENDER'
-            
-            # Get the render properties panel class
-            render_panel = getattr(bpy.types, 'RENDER_PT_context', None)
-            
-            if render_panel and hasattr(render_panel, 'draw'):
-                # Draw the render panel UI
-                render_panel.draw(render_panel, context)
-            else:
-                layout.label(text="Switch to Properties > Render", icon='INFO')
-            
-            # Restore original context
-            context.space_data.context = original_context
-            
-        except Exception as e:
-            layout.label(text="Unable to display render UI", icon='ERROR')
-            layout.label(text=str(e))
+        # Quick render settings
+        col = layout.column(align=True)
+        col.prop(rd, "engine", text="Engine")
+        col.separator()
+        
+        col.prop(rd, "resolution_x", text="Resolution X")
+        col.prop(rd, "resolution_y", text="Y")
+        col.prop(rd, "resolution_percentage", text="%")
+        
+        col.separator()
+        col.prop(rd, "fps")
+        
+        col.separator()
+        box = layout.box()
+        box.label(text="Output", icon='OUTPUT')
+        col = box.column()
+        col.prop(rd, "filepath", text="")
+        col.prop(rd, "image_settings", "file_format", text="Format")
+        
+        # Quick render button
+        layout.separator()
+        col = layout.column(align=True)
+        col.scale_y = 1.5
+        col.operator("render.render", text="Render Image", icon='RENDER_STILL')
+        col.operator("render.render", text="Render Animation", icon='RENDER_ANIMATION').animation = True
 
 
 # Panel classes to register

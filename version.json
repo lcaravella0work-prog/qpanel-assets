@@ -1,7 +1,7 @@
 {
-  "version": "1.1.0",
+  "version": "1.1.1",
   "release_date": "2025-12-14",
-  "changelog": "Added Properties UI panels (Modifier, Material, Render) - Switch context to display native Blender properties in sidebar",
+  "changelog": "Fixed Properties UI panels to work correctly in VIEW_3D (no more context attribute error). Now displays modifiers, materials, and render settings directly.",
   "min_qpanel_version": "2.0.0",
   "blender_min_version": "3.4.0"
 }
