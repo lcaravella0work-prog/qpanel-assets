@@ -16,6 +16,7 @@ class QPANEL_PT_sequencer_strips(Panel):
     bl_idname = "QPANEL_PT_sequencer_strips"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'SEQUENCER'
     
     def draw(self, context):
         layout = self.layout
@@ -40,6 +41,7 @@ class QPANEL_PT_sequencer_effects(Panel):
     bl_idname = "QPANEL_PT_sequencer_effects"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'SEQUENCER'
     
     def draw(self, context):
         layout = self.layout
@@ -59,6 +61,7 @@ class QPANEL_PT_sequencer_preview(Panel):
     bl_idname = "QPANEL_PT_sequencer_preview"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'SEQUENCER'
     
     def draw(self, context):
         layout = self.layout

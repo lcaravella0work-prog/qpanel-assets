@@ -16,6 +16,7 @@ class QPANEL_PT_armature_bones(Panel):
     bl_idname = "QPANEL_PT_armature_bones"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ARMATURE'
     
     @classmethod
     def poll(cls, context):
@@ -39,6 +40,7 @@ class QPANEL_PT_armature_display(Panel):
     bl_idname = "QPANEL_PT_armature_display"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ARMATURE'
     
     @classmethod
     def poll(cls, context):
@@ -61,6 +63,7 @@ class QPANEL_PT_armature_pose(Panel):
     bl_idname = "QPANEL_PT_armature_pose"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ARMATURE'
     
     @classmethod
     def poll(cls, context):

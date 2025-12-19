@@ -16,6 +16,7 @@ class QPANEL_PT_nla_tracks(Panel):
     bl_idname = "QPANEL_PT_nla_tracks"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ANIMATION'
     
     def draw(self, context):
         layout = self.layout
@@ -42,6 +43,7 @@ class QPANEL_PT_nla_strips(Panel):
     bl_idname = "QPANEL_PT_nla_strips"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ANIMATION'
     
     def draw(self, context):
         layout = self.layout

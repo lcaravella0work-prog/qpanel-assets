@@ -16,6 +16,7 @@ class QPANEL_PT_dopesheet_filters(Panel):
     bl_idname = "QPANEL_PT_dopesheet_filters"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ANIMATION'
     
     def draw(self, context):
         layout = self.layout
@@ -36,6 +37,7 @@ class QPANEL_PT_keyframe_tools(Panel):
     bl_idname = "QPANEL_PT_keyframe_tools"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ANIMATION'
     
     def draw(self, context):
         layout = self.layout
@@ -59,6 +61,7 @@ class QPANEL_PT_timeline_playback(Panel):
     bl_idname = "QPANEL_PT_timeline_playback"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ANIMATION'
     
     def draw(self, context):
         layout = self.layout
@@ -84,6 +87,7 @@ class QPANEL_PT_action_editor(Panel):
     bl_idname = "QPANEL_PT_action_editor"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ANIMATION'
     
     def draw(self, context):
         layout = self.layout

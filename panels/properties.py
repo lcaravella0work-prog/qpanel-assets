@@ -16,7 +16,7 @@ class QPANEL_PT_modifiers(Panel):
     bl_idname = "QPANEL_PT_modifiers"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'OBJECT'
     
     @classmethod
     def poll(cls, context):
@@ -44,7 +44,7 @@ class QPANEL_PT_materials(Panel):
     bl_idname = "QPANEL_PT_materials"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'OBJECT'
     
     @classmethod
     def poll(cls, context):
@@ -74,7 +74,7 @@ class QPANEL_PT_object_data(Panel):
     bl_idname = "QPANEL_PT_object_data"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'OBJECT'
     
     @classmethod
     def poll(cls, context):
@@ -101,7 +101,7 @@ class QPANEL_PT_constraints(Panel):
     bl_idname = "QPANEL_PT_constraints"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'OBJECT'
     
     @classmethod
     def poll(cls, context):

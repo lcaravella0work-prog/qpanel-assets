@@ -16,6 +16,7 @@ class QPANEL_PT_graph_view(Panel):
     bl_idname = "QPANEL_PT_graph_view"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ANIMATION'
     
     def draw(self, context):
         layout = self.layout
@@ -32,6 +33,7 @@ class QPANEL_PT_fcurve_modifiers(Panel):
     bl_idname = "QPANEL_PT_fcurve_modifiers"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'ANIMATION'
     
     def draw(self, context):
         layout = self.layout

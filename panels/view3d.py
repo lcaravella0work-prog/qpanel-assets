@@ -16,7 +16,7 @@ class QPANEL_PT_transform(Panel):
     bl_idname = "QPANEL_PT_transform"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'VIEWPORT'
     
     @classmethod
     def poll(cls, context):
@@ -41,7 +41,7 @@ class QPANEL_PT_snapping(Panel):
     bl_idname = "QPANEL_PT_snapping"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'VIEWPORT'
     
     def draw(self, context):
         layout = self.layout
@@ -66,7 +66,7 @@ class QPANEL_PT_view3d_properties(Panel):
     bl_idname = "QPANEL_PT_view3d_properties"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'VIEWPORT'
     
     def draw(self, context):
         layout = self.layout
@@ -88,7 +88,7 @@ class QPANEL_PT_overlay(Panel):
     bl_idname = "QPANEL_PT_overlay"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'VIEWPORT'
     
     def draw(self, context):
         layout = self.layout

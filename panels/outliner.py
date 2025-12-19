@@ -17,7 +17,7 @@ class QPANEL_PT_outliner(Panel):
     bl_idname = "QPANEL_PT_outliner"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "QPanel"
+    bl_qpanel_category = 'OUTLINER'
     
     def draw(self, context):
         layout = self.layout

@@ -16,6 +16,7 @@ class QPANEL_PT_mesh_data(Panel):
     bl_idname = "QPANEL_PT_mesh_data"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'MESH'
     
     @classmethod
     def poll(cls, context):
@@ -40,6 +41,7 @@ class QPANEL_PT_mesh_normals(Panel):
     bl_idname = "QPANEL_PT_mesh_normals"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'MESH'
     
     @classmethod
     def poll(cls, context):
@@ -66,6 +68,7 @@ class QPANEL_PT_mesh_vertex_groups(Panel):
     bl_idname = "QPANEL_PT_mesh_vertex_groups"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'MESH'
     
     @classmethod
     def poll(cls, context):
@@ -89,6 +92,7 @@ class QPANEL_PT_mesh_shape_keys(Panel):
     bl_idname = "QPANEL_PT_mesh_shape_keys"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'MESH'
     
     @classmethod
     def poll(cls, context):
@@ -113,6 +117,7 @@ class QPANEL_PT_mesh_uv_maps(Panel):
     bl_idname = "QPANEL_PT_mesh_uv_maps"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'MESH'
     
     @classmethod
     def poll(cls, context):

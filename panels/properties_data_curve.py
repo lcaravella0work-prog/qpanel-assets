@@ -16,6 +16,7 @@ class QPANEL_PT_curve_shape(Panel):
     bl_idname = "QPANEL_PT_curve_shape"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'CURVE'
     
     @classmethod
     def poll(cls, context):
@@ -37,6 +38,7 @@ class QPANEL_PT_curve_geometry(Panel):
     bl_idname = "QPANEL_PT_curve_geometry"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'CURVE'
     
     @classmethod
     def poll(cls, context):
@@ -63,6 +65,7 @@ class QPANEL_PT_curve_path(Panel):
     bl_idname = "QPANEL_PT_curve_path"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
+    bl_qpanel_category = 'CURVE'
     
     @classmethod
     def poll(cls, context):
