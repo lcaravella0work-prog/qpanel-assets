@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "release_date": "2025-12-19",
-  "changelog": "REBUILD: Complete rewrite of QPanel Assets based on Blender 5.0 native UI. NEW panels: Outliner (collections + hierarchy), Transform & View (snapping, overlays, view properties), Properties (modifiers, materials, constraints, object data). Clean architecture, auto-discovery system, production-ready.",
+  "changelog": "COMPLETE: All essential bl_ui panels recreated. 16 modules with 60+ panels covering Animation, Rendering, Physics, Particles, Mesh, Camera, Light, Curve, Armature, Texture, Scene, World, UV/Image, Shader, Video Sequencer. Full Panel Selector compatibility.",
   "min_qpanel_version": "5.2.0",
   "blender_min_version": "3.4.0"
 }
