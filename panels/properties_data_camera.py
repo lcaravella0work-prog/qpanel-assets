@@ -16,7 +16,6 @@ class QPANEL_PT_camera_lens(Panel):
     bl_idname = "QPANEL_PT_camera_lens"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Camera"
     
     @classmethod
     def poll(cls, context):
@@ -43,7 +42,6 @@ class QPANEL_PT_camera_dof(Panel):
     bl_idname = "QPANEL_PT_camera_dof"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Camera"
     
     @classmethod
     def poll(cls, context):
@@ -70,7 +68,6 @@ class QPANEL_PT_camera_viewport(Panel):
     bl_idname = "QPANEL_PT_camera_viewport"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Camera"
     
     @classmethod
     def poll(cls, context):
@@ -93,7 +90,6 @@ class QPANEL_PT_camera_safe_areas(Panel):
     bl_idname = "QPANEL_PT_camera_safe_areas"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Camera"
     
     @classmethod
     def poll(cls, context):

@@ -16,7 +16,6 @@ class QPANEL_PT_render_settings(Panel):
     bl_idname = "QPANEL_PT_render_settings"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Render"
     
     def draw(self, context):
         layout = self.layout
@@ -36,7 +35,6 @@ class QPANEL_PT_render_output(Panel):
     bl_idname = "QPANEL_PT_render_output"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Render"
     
     def draw(self, context):
         layout = self.layout
@@ -60,7 +58,6 @@ class QPANEL_PT_render_format(Panel):
     bl_idname = "QPANEL_PT_render_format"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Render"
     
     def draw(self, context):
         layout = self.layout
@@ -88,7 +85,6 @@ class QPANEL_PT_render_sampling(Panel):
     bl_idname = "QPANEL_PT_render_sampling"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Render"
     
     @classmethod
     def poll(cls, context):

@@ -16,7 +16,6 @@ class QPANEL_PT_particle_system(Panel):
     bl_idname = "QPANEL_PT_particle_system"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Particles"
     
     @classmethod
     def poll(cls, context):
@@ -52,7 +51,6 @@ class QPANEL_PT_particle_emission(Panel):
     bl_idname = "QPANEL_PT_particle_emission"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Particles"
     
     @classmethod
     def poll(cls, context):
@@ -81,7 +79,6 @@ class QPANEL_PT_particle_velocity(Panel):
     bl_idname = "QPANEL_PT_particle_velocity"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Particles"
     
     @classmethod
     def poll(cls, context):
@@ -110,7 +107,6 @@ class QPANEL_PT_particle_render(Panel):
     bl_idname = "QPANEL_PT_particle_render"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Particles"
     
     @classmethod
     def poll(cls, context):

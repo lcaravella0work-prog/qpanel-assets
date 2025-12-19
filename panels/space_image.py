@@ -16,7 +16,7 @@ class QPANEL_PT_image_view(Panel):
     bl_idname = "QPANEL_PT_image_view"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Image Editor"
+
     
     def draw(self, context):
         layout = self.layout
@@ -38,7 +38,6 @@ class QPANEL_PT_uv_select(Panel):
     bl_idname = "QPANEL_PT_uv_select"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "UV Editor"
     
     @classmethod
     def poll(cls, context):
@@ -72,7 +71,6 @@ class QPANEL_PT_uv_transform(Panel):
     bl_idname = "QPANEL_PT_uv_transform"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "UV Editor"
     
     @classmethod
     def poll(cls, context):
@@ -100,7 +98,6 @@ class QPANEL_PT_paint_image(Panel):
     bl_idname = "QPANEL_PT_paint_image"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Texture Paint"
     
     @classmethod
     def poll(cls, context):

@@ -16,7 +16,6 @@ class QPANEL_PT_node_tree(Panel):
     bl_idname = "QPANEL_PT_node_tree"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Shader Editor"
     
     def draw(self, context):
         layout = self.layout
@@ -37,7 +36,6 @@ class QPANEL_PT_shader_add(Panel):
     bl_idname = "QPANEL_PT_shader_add"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Shader Editor"
     
     def draw(self, context):
         layout = self.layout
@@ -65,7 +63,6 @@ class QPANEL_PT_node_color(Panel):
     bl_idname = "QPANEL_PT_node_color"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Shader Editor"
     
     def draw(self, context):
         layout = self.layout
@@ -92,7 +89,6 @@ class QPANEL_PT_node_converter(Panel):
     bl_idname = "QPANEL_PT_node_converter"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Shader Editor"
     
     def draw(self, context):
         layout = self.layout

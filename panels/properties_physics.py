@@ -16,7 +16,6 @@ class QPANEL_PT_physics_rigidbody(Panel):
     bl_idname = "QPANEL_PT_physics_rigidbody"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Physics"
     
     @classmethod
     def poll(cls, context):
@@ -46,7 +45,6 @@ class QPANEL_PT_physics_cloth(Panel):
     bl_idname = "QPANEL_PT_physics_cloth"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Physics"
     
     @classmethod
     def poll(cls, context):
@@ -84,7 +82,6 @@ class QPANEL_PT_physics_collision(Panel):
     bl_idname = "QPANEL_PT_physics_collision"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Physics"
     
     @classmethod
     def poll(cls, context):
@@ -118,7 +115,6 @@ class QPANEL_PT_physics_fluid(Panel):
     bl_idname = "QPANEL_PT_physics_fluid"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Physics"
     
     @classmethod
     def poll(cls, context):

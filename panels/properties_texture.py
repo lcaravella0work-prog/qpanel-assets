@@ -16,7 +16,6 @@ class QPANEL_PT_texture_settings(Panel):
     bl_idname = "QPANEL_PT_texture_settings"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Texture"
     
     def draw(self, context):
         layout = self.layout
@@ -32,7 +31,6 @@ class QPANEL_PT_texture_image(Panel):
     bl_idname = "QPANEL_PT_texture_image"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Texture"
     
     def draw(self, context):
         layout = self.layout
@@ -61,7 +59,6 @@ class QPANEL_PT_texture_mapping(Panel):
     bl_idname = "QPANEL_PT_texture_mapping"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Texture"
     
     def draw(self, context):
         layout = self.layout

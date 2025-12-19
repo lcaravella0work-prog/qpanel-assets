@@ -16,7 +16,6 @@ class QPANEL_PT_light_settings(Panel):
     bl_idname = "QPANEL_PT_light_settings"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Light"
     
     @classmethod
     def poll(cls, context):
@@ -41,7 +40,6 @@ class QPANEL_PT_light_shadow(Panel):
     bl_idname = "QPANEL_PT_light_shadow"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Light"
     
     @classmethod
     def poll(cls, context):
@@ -66,7 +64,6 @@ class QPANEL_PT_light_spot(Panel):
     bl_idname = "QPANEL_PT_light_spot"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Light"
     
     @classmethod
     def poll(cls, context):
@@ -90,7 +87,6 @@ class QPANEL_PT_light_area(Panel):
     bl_idname = "QPANEL_PT_light_area"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Light"
     
     @classmethod
     def poll(cls, context):

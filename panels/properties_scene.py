@@ -16,7 +16,6 @@ class QPANEL_PT_scene_units(Panel):
     bl_idname = "QPANEL_PT_scene_units"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Scene"
     
     def draw(self, context):
         layout = self.layout
@@ -35,7 +34,6 @@ class QPANEL_PT_scene_gravity(Panel):
     bl_idname = "QPANEL_PT_scene_gravity"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Scene"
     
     def draw(self, context):
         layout = self.layout
@@ -52,7 +50,6 @@ class QPANEL_PT_scene_audio(Panel):
     bl_idname = "QPANEL_PT_scene_audio"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "Scene"
     
     def draw(self, context):
         layout = self.layout
@@ -73,7 +70,6 @@ class QPANEL_PT_world_surface(Panel):
     bl_idname = "QPANEL_PT_world_surface"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "World"
     
     def draw(self, context):
         layout = self.layout
@@ -96,7 +92,6 @@ class QPANEL_PT_world_viewport(Panel):
     bl_idname = "QPANEL_PT_world_viewport"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
-    bl_category = "World"
     
     def draw(self, context):
         layout = self.layout
