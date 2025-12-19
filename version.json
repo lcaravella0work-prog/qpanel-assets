@@ -1,7 +1,7 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "release_date": "2025-12-19",
-  "changelog": "COMPLETE: All essential bl_ui panels recreated. 16 modules with 60+ panels covering Animation, Rendering, Physics, Particles, Mesh, Camera, Light, Curve, Armature, Texture, Scene, World, UV/Image, Shader, Video Sequencer. Full Panel Selector compatibility.",
+  "changelog": "FIX: Panel categorization for QPanel Assets. All panels now properly detected and grouped by category (Animation, Rendering, Physics, etc.). Removed bl_category incompatibility. Preview Panel working for all panels.",
   "min_qpanel_version": "5.2.0",
   "blender_min_version": "3.4.0"
 }
