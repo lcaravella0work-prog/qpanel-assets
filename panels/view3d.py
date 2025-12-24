@@ -82,22 +82,23 @@ class QPANEL_PT_view3d_properties(Panel):
         layout.prop(view, "lock_cursor")
 
 
-class QPANEL_PT_overlay(Panel):
-    """Overlay Settings"""
-    bl_label = "Overlays"
-    bl_idname = "QPANEL_PT_overlay"
-    bl_space_type = 'VIEW_3D'
-    bl_region_type = 'WINDOW'
-    bl_qpanel_category = 'VIEWPORT'
-    
-    def draw(self, context):
-        layout = self.layout
-        view = context.space_data
-        overlay = view.overlay
-        
-        layout.prop(overlay, "show_overlays", text="Show Overlays")
-        
-        if overlay.show_overlays:
+# Classes to register
+classes = (
+    QPANEL_PT_transform,
+    QPANEL_PT_snapping,
+    QPANEL_PT_view3d_properties,
+)
+
+
+def register():
+    for cls in classes:
+        bpy.utils.register_class(cls)
+
+
+def unregister():
+    for cls in reversed(classes):
+        bpy.utils.unregister_class(cls)
+
             col = layout.column()
             col.separator()
             col.prop(overlay, "show_floor", text="Grid Floor")

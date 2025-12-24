@@ -68,36 +68,22 @@ class QPANEL_PT_materials(Panel):
                 box.label(text="Empty Slot", icon='INFO')
 
 
-class QPANEL_PT_object_data(Panel):
-    """Object Data Properties"""
-    bl_label = "Object Data"
-    bl_idname = "QPANEL_PT_object_data"
-    bl_space_type = 'VIEW_3D'
-    bl_region_type = 'WINDOW'
-    bl_qpanel_category = 'OBJECT'
-    
-    @classmethod
-    def poll(cls, context):
-        return context.object is not None and context.object.type == 'MESH'
-    
-    def draw(self, context):
-        layout = self.layout
-        obj = context.object
-        mesh = obj.data
-        
-        col = layout.column()
-        col.label(text="Mesh Statistics:", icon='MESH_DATA')
-        col.separator()
-        
-        stats_box = col.box()
-        stats_box.label(text=f"Vertices: {len(mesh.vertices)}")
-        stats_box.label(text=f"Edges: {len(mesh.edges)}")
-        stats_box.label(text=f"Faces: {len(mesh.polygons)}")
+# Classes to register
+classes = (
+    QPANEL_PT_modifiers,
+    QPANEL_PT_materials,
+)
 
 
-class QPANEL_PT_constraints(Panel):
-    """Object Constraints"""
-    bl_label = "Constraints"
+def register():
+    for cls in classes:
+        bpy.utils.register_class(cls)
+
+
+def unregister():
+    for cls in reversed(classes):
+        bpy.utils.unregister_class(cls)
+
     bl_idname = "QPANEL_PT_constraints"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'WINDOW'
